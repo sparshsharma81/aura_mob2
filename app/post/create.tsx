@@ -16,7 +16,7 @@ export default function CreatePostScreen() {
   const [image, setImage] = useState<string | null>(null);
 
   const chooseImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ImagePicker.MediaTypeOptions.Images, quality: 0.8 });
+    const result = await ImagePicker.launchImageLibraryAsync({ mediaTypes: ['images'], quality: 0.8 });
     if (!result.canceled) {
       setImage(result.assets[0].uri);
     }
@@ -28,7 +28,6 @@ export default function CreatePostScreen() {
     const match = /\.(\w+)$/.exec(filename);
     const response = await createPostApi({
       caption,
-      // @ts-expect-error React Native file upload shape
       image: { uri: image, name: filename, type: match ? `image/${match[1]}` : 'image/jpeg' }
     });
 

@@ -10,7 +10,12 @@ const config: ExpoConfig = {
   userInterfaceStyle: 'light',
   assetBundlePatterns: ['**/*'],
 
+  android: {
+    package: 'com.spars.auramobile'
+  },
+
   ios: {
+    bundleIdentifier: 'com.spars.auramobile',
     supportsTablet: true
   },
 
