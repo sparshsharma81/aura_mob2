@@ -36,7 +36,7 @@ export default function SignupScreen() {
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
           <View style={styles.card}>
-            <Text style={styles.brand}>Create account</Text>
+            <Text style={styles.brand}>Create the account</Text>
             <Text style={styles.subtitle}>Join Aura and start posting instantly.</Text>
             <View style={styles.form}>
               <Input value={username} onChangeText={setUsername} placeholder="Username" autoCapitalize="none" />
