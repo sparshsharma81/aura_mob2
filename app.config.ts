@@ -1,5 +1,12 @@
 import type { ExpoConfig } from 'expo/config';
 
+const apiUrl =
+  process.env.EXPO_PUBLIC_API_URL ||
+  process.env.EXPO_PUBLIC_URL ||
+  process.env.VITE_URL ||
+  process.env.URL ||
+  'http://localhost:5000';
+
 const config: ExpoConfig = {
   name: 'Aura Mobile',
   slug: 'aura-mobile',
@@ -22,9 +29,7 @@ const config: ExpoConfig = {
   plugins: ['expo-router'],
 
   extra: {
-    apiUrl:
-      process.env.EXPO_PUBLIC_API_URL ||
-      'http://192.168.1.19:5000',
+    apiUrl,
 
     eas: {
       projectId: 'ca93d73a-09ba-4857-8828-52eb25871373'

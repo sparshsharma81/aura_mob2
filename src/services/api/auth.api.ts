@@ -2,6 +2,7 @@ import { api } from './client';
 
 export async function loginApi(payload: { email: string; password: string }) {
   const response = await api.post('/api/v1/user/login', payload);
+  console.log('Login response:', response.data);
   return response.data;
 }
 
